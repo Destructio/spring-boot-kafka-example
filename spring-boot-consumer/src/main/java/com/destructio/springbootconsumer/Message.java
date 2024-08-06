@@ -1,11 +1,11 @@
 package com.destructio.springbootconsumer;
 
-import java.time.ZonedDateTime;
+import java.time.LocalDateTime;
 
 public record Message(
         String title,
         String message,
-        ZonedDateTime messageTime,
+        LocalDateTime messageTime,
         Boolean isMessageGood,
         Long messageSum
 ) {
