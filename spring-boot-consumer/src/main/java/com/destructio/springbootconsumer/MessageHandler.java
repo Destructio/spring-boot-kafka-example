@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 @Slf4j
 @Service
-public class MessageConsumerService {
+public class MessageHandler {
 
     @KafkaListener(topics = "messages")
     private void printMessage(Message message) {

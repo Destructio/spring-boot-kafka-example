@@ -15,7 +15,7 @@ import static java.time.ZonedDateTime.now;
 @Service
 @EnableScheduling
 @RequiredArgsConstructor
-public class MessageProducerService {
+public class MessageSender {
     private final KafkaTemplate<String, Message> kafkaTemplate;
     private static final Random random = new Random();
 
