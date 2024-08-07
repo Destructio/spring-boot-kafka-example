@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Random;
 
-import static java.time.ZonedDateTime.now;
+import static java.time.LocalDateTime.now;
 
 @Slf4j
 @Service
