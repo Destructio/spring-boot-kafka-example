@@ -13,8 +13,8 @@ public class MessageRepository {
         this.messagesMap = new ConcurrentHashMap<>();
     }
 
-    public void save(String id, Message message) {
-        messagesMap.put(id, message);
+    public void save(Message message) {
+        messagesMap.put(message.title(), message);
     }
 
     public Optional<Message> findById(String id) {

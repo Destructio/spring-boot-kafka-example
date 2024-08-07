@@ -40,10 +40,10 @@ class MessageHandlerTest {
     @Test
     void shouldHandleMessage() {
         //given
-        Message message = new Message("test", "test", now(), true, 10L);
+        Message message = new Message("title", "test", now(), true, 10L);
 
         // when
-        messageTemplate.send("messages", "test-key-1", message);
+        messageTemplate.send("messages", message);
 
         // then
         await()
@@ -51,7 +51,7 @@ class MessageHandlerTest {
                 .atMost(5, SECONDS)
                 .untilAsserted(() -> assertEquals(1, messageRepository.count()));
 
-        assertTrue(messageRepository.findById("test-key-1").isPresent());
-        assertEquals(message, messageRepository.findById("test-key-1").get());
+        assertTrue(messageRepository.findById("title").isPresent());
+        assertEquals(message, messageRepository.findById("title").get());
     }
 }
