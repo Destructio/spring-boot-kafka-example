@@ -30,7 +30,8 @@ class MessageHandlerTest {
 
     @Container
     static final KafkaContainer kafka = new KafkaContainer(DockerImageName.parse("apache/kafka-native")
-            .asCompatibleSubstituteFor("apache/kafka"));
+            .asCompatibleSubstituteFor("apache/kafka"))
+            .withReuse(true);
 
     @DynamicPropertySource
     static void overrideProperties(DynamicPropertyRegistry registry) {
